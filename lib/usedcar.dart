@@ -43,7 +43,7 @@ class UsedCar extends StatelessWidget{
             Text(
               'Title document',
               style: TextStyle(
-                fontWeight: FontWeight.w100,
+                fontWeight: FontWeight.w200,
                 fontSize: 15,
                 color: Colors.black,),),
             SizedBox(height: 22,),
