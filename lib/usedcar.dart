@@ -24,20 +24,20 @@ class UsedCar extends StatelessWidget{
             Text(
               'Enter your car registration number',
               style: TextStyle(
-                fontWeight: FontWeight.w100,
+                fontWeight: FontWeight.w400,
                 fontSize: 15,
                 color: Colors.black,),),
             SizedBox(height: 17),
-            buildTextField('car registration number', 'R31122 55'),
+          //  buildTextField('car registration number', 'R31122 55'),
             SizedBox(height: 24),
             Text(
               'Enter VIN number',
               style: TextStyle(
-                fontWeight: FontWeight.w100,
+                fontWeight: FontWeight.w400,
                 fontSize: 15,
                 color: Colors.black,),),
             SizedBox(height: 17 ),
-            buildTextField('Car VIN number', '31122 56'),
+            buildTextField(  label: 'Car VIN number', hint: '31122 56', fieldName: ''),
             SizedBox(height: 24),
             Text(
               'Title document',
@@ -95,7 +95,7 @@ class UsedCar extends StatelessWidget{
   );
   }
 
-  Widget buildTextField(String label, String hint,){
+  Widget buildTextField({required String label, required String hint, required fieldName}){
     return TextField(
       decoration: InputDecoration(
         labelText: label,
