@@ -21,23 +21,24 @@ class UsedCar extends StatelessWidget{
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Enter your car registration number',
-              style: TextStyle(
-                fontWeight: FontWeight.w100,
-                fontSize: 15,
-                color: Colors.black,),),
-            SizedBox(height: 17),
-            buildTextField('car registration number', 'R31122 55'),
+            buildTextField(label: 'Car registration number', hint: 'R31122 55', fieldName: 'Enter your car registration number'),
+            // Text(
+            //   'Enter your car registration number',
+            //   style: TextStyle(
+            //     fontWeight: FontWeight.w400,
+            //     fontSize: 15,
+            //     color: Colors.black,),),
+            // SizedBox(height: 17),
+          //  buildTextField('car registration number', 'R31122 55'),
             SizedBox(height: 24),
-            Text(
-              'Enter VIN number',
-              style: TextStyle(
-                fontWeight: FontWeight.w100,
-                fontSize: 15,
-                color: Colors.black,),),
+            // Text(
+            //   'Enter VIN number',
+            //   style: TextStyle(
+            //     fontWeight: FontWeight.w400,
+            //     fontSize: 15,
+            //     color: Colors.black,),),
             SizedBox(height: 17 ),
-            buildTextField('Car VIN number', '31122 56'),
+            buildTextField(  label: 'Car VIN number', hint: '31122 56', fieldName: 'Enter VIN number'),
             SizedBox(height: 24),
             Text(
               'Title document',
@@ -95,31 +96,42 @@ class UsedCar extends StatelessWidget{
   );
   }
 
-  Widget buildTextField(String label, String hint,){
-    return TextField(
-      decoration: InputDecoration(
-        labelText: label,
-        labelStyle: TextStyle(
-          color: Colors.grey,
-          fontSize: 17,
-        ),
-        hintText: hint,
-        hintStyle: TextStyle(
-          color: Colors.black,
-          fontSize: 14,
-          fontWeight: FontWeight.w100,
-        ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(13),
-          borderSide: BorderSide(color: Colors.black),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(13),
-          borderSide: BorderSide(color: Colors.grey.shade600
+  Widget buildTextField({required String label, required String hint, required fieldName}){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text( fieldName,
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 15,
+            color: Colors.black,),),
+        SizedBox(height: 17),
+        TextField(
+          decoration: InputDecoration(
+            labelText: label,
+            labelStyle: TextStyle(
+              color: Colors.grey,
+              fontSize: 17,
+            ),
+            hintText: hint,
+            hintStyle: TextStyle(
+              color: Colors.black,
+              fontSize: 14,
+              fontWeight: FontWeight.w100,
+            ),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(13),
+              borderSide: BorderSide(color: Colors.black),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(13),
+              borderSide: BorderSide(color: Colors.grey.shade600
+              ),
+            ),
+            contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
           ),
         ),
-        contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
-      ),
+      ],
     );
   }
 
