@@ -55,7 +55,7 @@ class _MyCarAppState extends State<MyCarApp> {
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => usedcar()));
+                      builder: (context) => UsedCar()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF001437),

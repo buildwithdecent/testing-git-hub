@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class usedcar extends StatelessWidget{
+class UsedCar extends StatelessWidget{
+  const UsedCar({super.key});
+
   @override
   Widget build(BuildContext context) {
   return Scaffold(
