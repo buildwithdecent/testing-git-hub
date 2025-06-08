@@ -7,6 +7,16 @@ class SimpleApp extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+
+    List<Map<String, String>> example = [{'title': 'Warm Up', 'description': 'Start your workout with 5-10 minutes of warming up.'},
+      {'title': 'Stay Hydrated', 'description': 'Drink water before, during, and after exercise.'},
+      {'title': 'Proper Form', 'description': 'Focus on maintaining proper form to prevent injury'},
+      {},
+      {'title': 'Last option', 'description': 'This is the last option in the list'},
+
+
+    ];
+
     return Scaffold(
       backgroundColor: CupertinoColors.activeBlue,
       body: SafeArea(
@@ -38,14 +48,19 @@ class SimpleApp extends StatelessWidget{
                 Container(
                   color: Colors.white,
                   padding: EdgeInsets.all(16),
-                  child: ListView(
-                    children: [
-                      Reusable(title: 'Warm Up', description: 'Start your workout with 5-10 minutes of warming up.'),
-                      Reusable(title: 'Stay Hydrated', description: 'Drink water before, during, and after exercise.'),
-                      Reusable(title: 'Proper Form', description: 'Focus on maintaining proper form to prevent injury'),
-                      
-                    ],
-                  ),
+                  // child: ListView(
+                  //   children: [
+                  //     Reusable(title: 'Warm Up', description: 'Start your workout with 5-10 minutes of warming up.'),
+                  //     Reusable(title: 'Stay Hydrated', description: 'Drink water before, during, and after exercise.'),
+                  //     Reusable(title: 'Proper Form', description: 'Focus on maintaining proper form to prevent injury'),
+                  //
+                  //   ],
+                  // ),
+                  child: ListView.builder(
+                    itemCount: example.length,
+                      itemBuilder:  (context, index){
+                      return Reusable(title: example[index]['title'] ?? 'no title', description:  example[index]['description']?? 'no description');
+                      }),
                 ),
                 ),
 
