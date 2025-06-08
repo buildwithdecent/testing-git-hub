@@ -7,6 +7,13 @@ class AnotherApp extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    List<Map<String, String>> another = [{'title' : 'Rest Days', 'Description' : 'Incorporate rest days into your routine to allow recovery.'},
+    {'title' : 'Balanced Diet', 'Description' : 'Support your fitness growth with a balanced and nutritious diet.'},
+    {'title' : 'Proper Form', 'Description' : "Pay attention to your body's signals and avoid overtraining."},
+      {},
+    ];
+
+
     return Scaffold(
       backgroundColor: Colors.green,
       body: SafeArea(
@@ -38,13 +45,19 @@ class AnotherApp extends StatelessWidget{
                 Container(
                   color: Colors.white,
                   padding: EdgeInsets.all(16),
-                  child: ListView(
-                    children: [
-                      Reusable(title: 'Rest Days', description: 'Incorporate rest days into your routine to allow recovery.'),
-                      Reusable(title: 'Balanced Diet', description: 'Support your fitness growth with a balanced and nutritious diet.'),
-                      Reusable(title: 'Proper Form', description: "Pay attention to your body's signals and avoid overtraining"),
-
-                    ],
+                  // child: ListView(
+                  //   children: [
+                  //     Reusable(title: 'Rest Days', description: 'Incorporate rest days into your routine to allow recovery.'),
+                  //     Reusable(title: 'Balanced Diet', description: 'Support your fitness growth with a balanced and nutritious diet.'),
+                  //     Reusable(title: 'Proper Form', description: "Pay attention to your body's signals and avoid overtraining"),
+                  //
+                  //   ],
+                  // ),
+                  child: ListView.builder(
+                    itemCount: another.length,
+                    itemBuilder: (context, index){
+                      return Reusable(title: another[index]['title'] ?? 'no title', description: another[index]['description'] ?? 'no description');
+                    }
                   ),
                 ),
               ),
