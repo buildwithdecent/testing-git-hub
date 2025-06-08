@@ -177,13 +177,13 @@ class _RevenueState extends State<Revenue> {
                     Row(
                       children: [
                         CircleAvatar(
-                          radius: 14,
+                          radius: 16,
                           backgroundImage: AssetImage('assets/image1.jpeg'),
                         ),
                         SizedBox(width: 6),
                         Text(
                           'John Micheal',
-                          style: TextStyle(fontSize: 12, color: Colors.black),
+                          style: TextStyle(fontSize: 14, color: Colors.black),
                         ),
                       ],
                     ),
@@ -193,21 +193,21 @@ class _RevenueState extends State<Revenue> {
                       children: [
                         Text(
                           'Reservation date: 20 - 10 - 2024',
-                          style: TextStyle(fontSize: 11, color: Colors.black),
+                          style: TextStyle(fontSize: 13, color: Colors.black),
                         ),
                         Text(
                           'Guest no: 4',
-                          style: TextStyle(fontSize: 11, color: Colors.black),
+                          style: TextStyle(fontSize: 13, color: Colors.black),
                         ),
                       ],
                     ),
                     SizedBox(height: 6,),
                     Row(
                       children: [
-                        Icon(CupertinoIcons.location_solid, size: 15,),
+                        Icon(CupertinoIcons.location_solid, size: 16,),
                         SizedBox(width: 12,),
                         Text('Bell restaurant street',
-                        style: TextStyle(fontSize: 11, color: Colors.black),),
+                        style: TextStyle(fontSize: 13, color: Colors.black),),
                       ],
                     ),
                   ],
@@ -228,13 +228,13 @@ class _RevenueState extends State<Revenue> {
                     Row(
                       children: [
                         CircleAvatar(
-                          radius: 14,
+                          radius: 16,
                           backgroundImage: AssetImage('assets/image1.jpeg'),
                         ),
                         SizedBox(width: 6),
                         Text(
                           'John Micheal',
-                          style: TextStyle(fontSize: 12, color: Colors.black),
+                          style: TextStyle(fontSize: 14, color: Colors.black),
                         ),
                       ],
                     ),
@@ -244,21 +244,21 @@ class _RevenueState extends State<Revenue> {
                       children: [
                         Text(
                           'Reservation date: 20 - 10 - 2024',
-                          style: TextStyle(fontSize: 11, color: Colors.black),
+                          style: TextStyle(fontSize: 13, color: Colors.black),
                         ),
                         Text(
                           'Guest no: 4',
-                          style: TextStyle(fontSize: 11, color: Colors.black),
+                          style: TextStyle(fontSize: 13, color: Colors.black),
                         ),
                       ],
                     ),
                     SizedBox(height: 6,),
                     Row(
                       children: [
-                        Icon(CupertinoIcons.location_solid, size: 15,),
+                        Icon(CupertinoIcons.location_solid, size: 16,),
                         SizedBox(width: 12,),
                         Text('Bell restaurant street',
-                          style: TextStyle(fontSize: 11, color: Colors.black),),
+                          style: TextStyle(fontSize: 13, color: Colors.black),),
                       ],
                     ),
                   ],
@@ -272,7 +272,7 @@ class _RevenueState extends State<Revenue> {
                         builder: (context) => SimpleApp(),
                     ));
                   },
-                  child:    Text('See more', style: TextStyle(fontSize: 12, color: Colors.black),),
+                  child:    Text('See more', style: TextStyle(fontSize: 14, color: Colors.black),),
                 ),
               ),
               SizedBox(height: 10,),
@@ -294,7 +294,7 @@ class _RevenueState extends State<Revenue> {
             Text(
               title,
               style: TextStyle(
-                fontSize: 15,
+                fontSize: 19,
                 fontWeight: FontWeight.w600,
                 color: Colors.grey,
               ),

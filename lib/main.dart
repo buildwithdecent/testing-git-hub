@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:project_1/pay2.dart';
+
 
 import 'cardetails.dart';
+import 'revenue.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: //MyHomePage(title: "title")
-        MyCarApp());
+        Revenue());
   }
 }
 

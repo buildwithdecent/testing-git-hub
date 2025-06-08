@@ -70,7 +70,7 @@ class Pay extends StatelessWidget{
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: InkWell(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => payment()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Payment()));
                 },
                 borderRadius: BorderRadius.circular(12),
                 child: Container(
