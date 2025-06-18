@@ -110,9 +110,6 @@ class Payment extends StatelessWidget{
               ],
             ),
       SizedBox(height: 200),
-
-            
-
             Container(
               padding: EdgeInsets.all(5),
               height: 40,

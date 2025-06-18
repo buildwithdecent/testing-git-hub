@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_1/Authentication/Profile_Setup.dart';
+import 'package:project_1/Tutorials/pay.dart';
 import 'package:project_1/examples/GridExample.dart';
 import 'package:project_1/examples/grid_example.dart';
+import 'package:project_1/on_boarding_screen/1st_iteration.dart';
 
 
-import 'cardetails.dart';
-import 'revenue.dart';
+import 'Tutorials/cardetails.dart';
+import 'Tutorials/revenue.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +19,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: //MyHomePage(title: "title")
-        GridExample2());
+      debugShowCheckedModeBanner: false,
+        home:
+      Iteration());
   }
 }
 

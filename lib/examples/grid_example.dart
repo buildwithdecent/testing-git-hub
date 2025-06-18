@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:project_1/reusable.dart';
+import 'package:project_1/Tutorials/reusable.dart';
 
 class GridExample extends StatelessWidget{
  GridExample({super.key});

@@ -32,6 +32,10 @@ dependencies:
     sdk: flutter
 
   intl: ^0.18.0
+  introduction_screen: ^3.1.17
+  pinput: ^5.0.1
+
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -64,6 +68,10 @@ flutter:
   assets:
       - assets/image1.jpeg
       - assets/image2.jpg
+      - assets/lenses.png
+      - assets/onboard1.png
+      - assets/Onboard2.png
+      - assets/onboard3.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

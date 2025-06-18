@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'SimpleApp.dart';
 import 'AnotherApp.dart';
-import 'examples/grid_example.dart';
+import '../examples/grid_example.dart';
 import 'home_screen.dart';
 
 class Revenue extends StatefulWidget{
