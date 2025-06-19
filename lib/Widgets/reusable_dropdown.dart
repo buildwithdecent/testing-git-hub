@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class DropdownChecklist extends StatefulWidget {
@@ -43,6 +44,7 @@ class _DropdownChecklistState extends State<DropdownChecklist> {
                 onChanged: (checked) {
                   setState(() {
                     if (checked == true) {
+                      selectedItems.clear();
                       selectedItems.add(item);
                     } else {
                       selectedItems.remove(item);
@@ -62,3 +64,4 @@ class _DropdownChecklistState extends State<DropdownChecklist> {
     );
   }
 }
+
