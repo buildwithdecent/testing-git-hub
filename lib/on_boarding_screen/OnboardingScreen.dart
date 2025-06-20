@@ -114,7 +114,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     builder: (context) =>CreateAccount(),
                   ));
                 },
-                showDoneButton: true,
+                showDoneButton: false,
                 dotsDecorator: DotsDecorator(
                   size: Size(8, 8),
                   activeSize: Size(24, 8),

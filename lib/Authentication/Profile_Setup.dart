@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:project_1/Authentication/Profile_Setup2.dart';
 import 'package:project_1/Widgets/Base_Button.dart';
 import '../Widgets/Build_progress_bar.dart';
+import '../Widgets/Confirm_password_input.dart';
+import '../Widgets/password_input.dart';
 import '../Widgets/reusable_dropdown.dart';
 
 class ProfileSetup1 extends StatefulWidget {
@@ -19,10 +21,15 @@ class _ProfileSetup1State extends State<ProfileSetup1> {
 
   TextEditingController professionController = TextEditingController();
   TextEditingController FullNameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
+
+
 
   String selectedPrefix = "Dr";
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
 
   @override
   Widget build(BuildContext context) {
@@ -127,28 +134,33 @@ class _ProfileSetup1State extends State<ProfileSetup1> {
                               AnimatedSwitcher(
                                 duration: Duration(milliseconds: 200),
                                 child: isProfessionsDisplay
-                                    ? DropdownChecklist(
-                                  key: ValueKey("professionDropdown"),
-                                  title: 'Profession',
-                                  items: [
-                                    'Optometrist',
-                                    'Optician',
-                                    'Ophthalmologist',
-                                    'Agents'
+                                    ? Column(
+                                  children: [
+                                    SizedBox(height: 8),
+                                    DropdownChecklist(
+                                      key: ValueKey("professionDropdown"),
+                                      title: 'Profession',
+                                      items: [
+                                        'Optometrist',
+                                        'Optician',
+                                        'Ophthalmologist',
+                                        'Agents'
+                                      ],
+                                      onSelectionChanged: (selectedList) {
+                                        setState(() {
+                                          professionController.text = selectedList.isNotEmpty
+                                              ? selectedList.first
+                                              : '';
+                                          isProfessionsDisplay = false;
+                                        });
+                                      },
+                                    ),
                                   ],
-                                  onSelectionChanged: (selectedList) {
-                                    setState(() {
-                                      professionController.text =
-                                      selectedList.isNotEmpty
-                                          ? selectedList.first
-                                          : '';
-                                      isProfessionsDisplay = false;
-                                    });
-                                  },
                                 )
                                     : const SizedBox.shrink(),
                               ),
                               const SizedBox(height: 20),
+
 
                               Text('Full name',
                                   style: TextStyle(
@@ -241,6 +253,20 @@ class _ProfileSetup1State extends State<ProfileSetup1> {
                                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(8),
                                       borderSide:BorderSide.none),
                                 ),
+                              ),
+                              SizedBox(height: 20,),
+
+                              Text('Create password',
+                                  style: TextStyle(color: Colors.black87, fontSize: 18)),
+                              const SizedBox(height: 6),
+                              PasswordInputField(controller: passwordController),
+                              SizedBox(height: 20),
+                              Text('Confirm password',
+                                  style: TextStyle(color: Colors.black87, fontSize: 18)),
+                              const SizedBox(height: 6),
+                              ConfirmPasswordField(
+                                controller: confirmPasswordController,
+                                passwordController: passwordController,
                               ),
 
 
