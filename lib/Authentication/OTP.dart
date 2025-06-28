@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
+import 'package:project_1/Authentication/Loginpage.dart';
 import 'package:project_1/Authentication/Profile_Setup2.dart';
+import 'package:project_1/Widgets/Base_Button.dart';
 import 'package:project_1/Widgets/Build_progress_bar.dart';
 import 'package:flutter/services.dart';
 
@@ -142,7 +144,11 @@ class _OtpScreenState extends State<OtpScreen> {
               SizedBox(height: 80),
               Center(
                 child: ElevatedButton(
-                  onPressed: _otp.length == 4 ? () => print("Verify $_otp") : null,
+                  onPressed: _otp.length == 4
+                      ? () {
+                    showSuccessDialog(context);
+                  }
+                      : null,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: _otp.length == 4
                         ? Color(0xFF114CA2)
@@ -166,4 +172,64 @@ class _OtpScreenState extends State<OtpScreen> {
       ),
     );
   }
+  void showSuccessDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Dialog(
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          insetPadding: EdgeInsets.symmetric(horizontal: 30),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 30),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(height: 10),
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Text("🎉🎊✨", style: TextStyle(fontSize: 30)),
+                    CircleAvatar(
+                      backgroundColor: Colors.blue,
+                      radius: 35,
+                      child: Icon(Icons.check, color: Colors.white, size: 35),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 30),
+                Text(
+                  "Thank you",
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  "Account creation successful!",
+                  style: TextStyle(fontSize: 16, color: Colors.black54),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 50),
+                BaseButton(
+                  text: 'Proceed to home screen',
+                  buttonColor: Colors.blue.shade100,
+                  textColor: Colors.blue.shade900,
+                  fontsize: 17,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>LoginPage()),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+
+
 }
