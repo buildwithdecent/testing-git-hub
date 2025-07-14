@@ -59,6 +59,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       },
                     ),
                   ),
+
                   Expanded(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,

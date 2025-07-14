@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_1/DashBoard/DashBoard_welcome.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -123,6 +124,8 @@ class _LoginPageState extends State<LoginPage> {
                     textColor: Color(0xFF114CA2),
                     borderColor: Color(0xFF114CA2),
                     onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardWelcome()),
+                      );
                     }, fontSize: 20,
                   ),
 
