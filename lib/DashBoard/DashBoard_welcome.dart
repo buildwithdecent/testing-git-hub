@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_1/Create_Order/Both_Eye_Order.dart';
-import 'package:project_1/Widgets/Base_Button.dart';
+import 'package:project_1/Widgets/Dash_board_Reusable.dart';
 
 class DashboardWelcome extends StatefulWidget {
   const DashboardWelcome({super.key});
@@ -20,13 +20,13 @@ class _DashboardWelcomeState extends State<DashboardWelcome> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Top Row: Welcome Text + Notification Icon
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
+                      SizedBox(height: 20,),
                       Text(
                         'Welcome,',
                         style: TextStyle(
@@ -40,33 +40,49 @@ class _DashboardWelcomeState extends State<DashboardWelcome> {
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                          fontSize: 20,
                         ),
                       ),
                     ],
                   ),
-                  const Icon(
-                    Icons.notifications_none,
-                    color: Colors.black87,
-                    size: 28,
+
+                  Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black12,
+                          blurRadius: 3,
+                          offset: Offset(0, 1),
+                        )
+                      ],
+                    ),
+                    child: Icon(Icons.notifications_none_outlined, size: 28, color: Colors.black87),
                   ),
                 ],
               ),
-
-              const SizedBox(height: 68),
-
-              // Move On Button
-              BaseButton(
-                text: 'Move On',
-                buttonColor: Colors.blue,
-                textColor: Colors.black,
-                fontsize: 23,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => BothEyeOrder()),
-                  );
-                },
+              const SizedBox(height: 30),
+              Orders('Recent orders', Colors.black),
+              SizedBox(height: 5,),
+              DashBoardReusable(
+              message: 'You are yet to make an order',
+                icon: Icons.edit_calendar_outlined,
+              buttonText: 'Create new order',
+              onButtonPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BothEyeOrder()),
+                );
+              },
+              ),
+              SizedBox(height: 30,),
+              Orders('special request summary', Colors.black),
+              SizedBox(height: 5,),
+              DashBoardReusable(
+                icon: Icons.edit_calendar_outlined,
+                message: 'You are yet to make a special request.',
               ),
             ],
           ),
@@ -74,4 +90,30 @@ class _DashboardWelcomeState extends State<DashboardWelcome> {
       ),
     );
   }
-}
+
+  Widget Orders(String title, Color color){
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      decoration: BoxDecoration(
+        color: const Color(0xFFF9FBFC),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 1,
+            offset: Offset(0, 1),
+          )
+        ],
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Text(
+        title,
+        style: TextStyle(fontSize: 18, color: color),
+      ),
+    );
+  }
+
+
+
+  }
+

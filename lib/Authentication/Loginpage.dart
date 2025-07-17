@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
             buildCreateAccountButton(
                     iconShow: true,
                     icon: Icons.g_translate,
-                    text: "Log in with Google",
+                    text: "Log in with Email",
                     buttonColor: Color(0xFF114CA2),
                     textColor: Colors.white,
                     onPressed: () {
@@ -119,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
             buildCreateAccountButton(
                     iconShow: true,
                     icon: Icons.email,
-                    text: "Log in with Email",
+                    text: "Log in with Google",
                     buttonColor: Colors.white,
                     textColor: Color(0xFF114CA2),
                     borderColor: Color(0xFF114CA2),

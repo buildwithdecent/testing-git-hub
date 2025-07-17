@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:project_1/Authentication/Loginpage.dart';
 import 'package:project_1/Authentication/create_account.dart';
 import 'package:project_1/Widgets/Base_Button.dart';
 
@@ -158,7 +159,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             children: [
               Text("Already have an account? "),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                },
                 child: Text(
                   "Log in",
                   style: TextStyle(
